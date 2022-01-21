@@ -7,3 +7,18 @@ public enum NPCState
     PatrolWalk,
     Chase,
 }
+
+public enum EnumMoveState
+{
+    Move,
+    Climp,
+}
+
+public enum EnumClimbDir
+{
+    None,
+    WU,
+    WD,
+    AU,
+    AD,
+}
