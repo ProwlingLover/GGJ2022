@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
+
 
 namespace LOS
 {
@@ -65,6 +67,7 @@ namespace LOS
         private void OnEnable()
         {
             enabled &= Util.Verify(GetComponent<Renderer>() != null, "No renderer attached to this GameObject! LOS Culler component must be added to a GameObject containing a MeshRenderer or Skinned Mesh Renderer!");
+            OnLineOfSightEnter += LineOfSightEnter;
         }
 
         private void Update()
@@ -157,5 +160,14 @@ namespace LOS
         }
 
         #endregion Event Invole Function
+
+        private void LineOfSightEnter(GameObject sender, ILOSSource losSource)
+        {
+            var patrol = losSource.GameObject.transform.parent.gameObject.GetComponent<Patrol>();
+            patrol.enabled = false;
+            var aiDesSetter = losSource.GameObject.transform.parent.gameObject.GetComponent<AIDestinationSetter>();
+            aiDesSetter.target = sender.transform;
+            aiDesSetter.enabled = true;
+        }
     }
 }
