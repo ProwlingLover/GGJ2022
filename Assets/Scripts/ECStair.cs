@@ -10,6 +10,7 @@ public class ECStair : MonoBehaviour
     public float climbSpeed =0.005f;
     private bool canTrans = false;
     private Transform player;
+    private Transform tempPlayer;
     private bool climbing = false;
     private Vector3 lastPos;
     private float t = 0;
@@ -27,39 +28,23 @@ public class ECStair : MonoBehaviour
             t += climbSpeed;
             if(player.position == target.position)
             {
-                canTrans = false;
                 climbing = false;
                 var input = player.GetComponent<MoveInput>();
                 input.ChangeMoveMode();
                 player = null;
             }
         }
-        else if (canTrans &&Input.GetKey("f"))
+        else if (canTrans &&Input.GetKey("g"))
         {
+            player = tempPlayer;
             var input = player.GetComponent<MoveInput>();
             input.ChangeClimbMode();
             player.LookAt(transform.position + transform.forward);
             lastPos = player.position;
             climbing = true;
             t = 0;
-        }
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        var input = other.collider.GetComponent<MoveInput>();
-        if (input)
-        {
-            input.tempDir = EnumClimbDir.None;
-        }
-    }
-
-    private void OnCollisionEnter(Collision other) 
-    {
-        if(other.gameObject.tag == "Player")
-        {
-            canTrans = true;
-            player = other.transform;
+            canTrans = false;
+            tempPlayer = null;
         }
     }
 
@@ -68,11 +53,17 @@ public class ECStair : MonoBehaviour
         if(other.tag == "Player")
         {
             canTrans = true;
-            player = other.transform;
+            tempPlayer = other.transform;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
+        if (other.tag == "Player")
+        {
+            canTrans = false;
+            tempPlayer = null;
+        }
     }
+
 }
