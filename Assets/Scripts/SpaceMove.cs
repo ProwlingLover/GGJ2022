@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-public class SimpleMover : MonoBehaviour {
+public class SpaceMove : MonoBehaviour {
     private GameObject lockFollower = null;
     public bool enableReturnBack = false;
     public List<Transform> halfWayPositionList = new List<Transform>();
@@ -38,7 +38,7 @@ public class SimpleMover : MonoBehaviour {
 
     private void FixedUpdate() 
     {
-        if (Input.GetKeyDown("p"))
+        if (Input.GetKeyDown("f"))
         {
             if (!inMoving && isStayCollide)
             {
