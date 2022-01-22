@@ -19,10 +19,16 @@ public class SimpleMover : MonoBehaviour {
     }
     private void OnCollisionStay(Collision collisionInfo) 
     {
-        if (!inMoving)
+        if (Input.GetKeyDown("f"))
         {
-            inMoving = true;
-            Move();
+            if (!inMoving)
+            {
+                if (collisionInfo.gameObject.name == "host")
+                {
+                    inMoving = true;
+                    Move();
+                }
+            }
         }
     }
 
@@ -50,7 +56,7 @@ public class SimpleMover : MonoBehaviour {
     {
         while (halfWayPositionQueue.Count > 0 && gameObject.transform.position != halfWayPositionQueue.Peek().position)
         {
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, halfWayPositionQueue.Peek().position, 0.1f * Time.deltaTime);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, halfWayPositionQueue.Peek().position, 3f * Time.deltaTime);
             yield return 0;
         }
         if (halfWayPositionQueue.Count > 0)
