@@ -8,25 +8,30 @@ ModelImporter:
     100004: Start
     100006: Surface
     100008: Tube4
+    100010: StTube
     400000: partical
     400002: //RootNode
     400004: Start
     400006: Surface
     400008: Tube4
+    400010: StTube
     2100000: 01 - Default
     2100002: SEglow
     2300000: partical
     2300002: Start
     2300004: Surface
     2300006: Tube4
+    2300008: StTube
     3300000: partical
     3300002: Start
     3300004: Surface
     3300006: Tube4
+    3300008: StTube
     4300000: Start
     4300002: Surface
     4300004: Tube4
     4300006: partical
+    4300008: StTube
   externalObjects: {}
   materials:
     importMaterials: 1
