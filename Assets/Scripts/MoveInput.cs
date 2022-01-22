@@ -32,7 +32,6 @@ public class MoveInput : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(camera.transform.forward+"YYY"+camera.transform.right);
         if (Input.GetKeyDown("f"))
         {
             if (IsClimbing())

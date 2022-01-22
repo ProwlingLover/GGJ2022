@@ -17,6 +17,24 @@ public class ECStair : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        var input = other.collider.GetComponent<MoveInput>();
+        if (input)
+        {
+            input.tempDir = dir;
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        var input = other.collider.GetComponent<MoveInput>();
+        if (input)
+        {
+            input.tempDir = EnumClimbDir.None;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         var input = other.GetComponent<MoveInput>();
