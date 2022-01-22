@@ -15,18 +15,24 @@ public class MoveInput : MonoBehaviour
     public EnumMoveState moveState;
     private Animator anim;
     public float rotateOffset = 90;
+    private Vector3 forward;
+    private Vector3 right;
     Quaternion targetAngels, climbAngels;
+    public Camera camera;
     // Start is called before the first frame update
     void Start()
     {
         moveState = EnumMoveState.Move;
         boby = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        forward = camera.transform.forward - Vector3.Dot(camera.transform.forward, Vector3.up) * Vector3.up;
+        right = camera.transform.right - Vector3.Dot(camera.transform.right, Vector3.up) * Vector3.up;
     }
     Vector3 input;
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        Debug.Log(camera.transform.forward+"YYY"+camera.transform.right);
         if (Input.GetKeyDown("f"))
         {
             if (IsClimbing())
@@ -52,65 +58,20 @@ public class MoveInput : MonoBehaviour
     void Move()
     {
         input.x = input.y = input.z = 0;
-        input.x = Input.GetAxis("Vertical"); 
-        input.z = Input.GetAxis("Horizontal") * -1;
-        input.Normalize();
-        var moveAmount = input * moveSpeed * Time.deltaTime;
+        var moveAmount = Vector3.zero;
+        if (Input.GetKey("w")) moveAmount += forward * moveSpeed * Time.deltaTime;
+        if (Input.GetKey("a")) moveAmount += -right * moveSpeed * Time.deltaTime;
+        if (Input.GetKey("s")) moveAmount += -forward * moveSpeed * Time.deltaTime;
+        if (Input.GetKey("d")) moveAmount += right * moveSpeed * Time.deltaTime;
+        transform.LookAt(transform.position + moveAmount);
         transform.position += moveAmount;
-        transform.LookAt(transform.position);
-        Rotate();
-        if (input.magnitude != 0)
+        if (moveAmount.magnitude != 0)
         {
             anim.SetBool("moving", true);
         }
         else
         {
             anim.SetBool("moving", false);
-        }
-    }
-
-    void Rotate()
-    {
-        if (input.x > 0)
-        {
-            if (input.z > 0)
-            {
-                targetAngels = Quaternion.Euler(0, 315 + rotateOffset, 0);
-            }
-            else if (input.z < 0)
-            {
-                targetAngels = Quaternion.Euler(0, 45 + rotateOffset, 0);
-            }
-            else
-            {
-                targetAngels = Quaternion.Euler(0, 0 + rotateOffset, 0);
-            }
-        }
-        else if (input.x < 0)
-        {
-            if (input.z > 0)
-            {
-                targetAngels = Quaternion.Euler(0, 225 + rotateOffset, 0);
-            }
-            else if (input.z < 0)
-            {
-                targetAngels = Quaternion.Euler(0, 135 + rotateOffset, 0);
-            }
-            else
-            {
-                targetAngels = Quaternion.Euler(0, 180 + rotateOffset, 0);
-            }
-        }
-        else
-        {
-            if (input.z > 0)
-            {
-                targetAngels = Quaternion.Euler(0, 270 + rotateOffset, 0);
-            }
-            else if (input.z < 0)
-            {
-                targetAngels = Quaternion.Euler(0, 90 + rotateOffset, 0);
-            }
         }
     }
 
