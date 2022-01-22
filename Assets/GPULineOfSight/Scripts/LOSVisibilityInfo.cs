@@ -67,7 +67,7 @@ namespace LOS
         private void OnEnable()
         {
             enabled &= Util.Verify(GetComponent<Renderer>() != null, "No renderer attached to this GameObject! LOS Culler component must be added to a GameObject containing a MeshRenderer or Skinned Mesh Renderer!");
-            OnLineOfSightEnter += LineOfSightEnter;
+            OnLineOfSightEnter += SwitchToSeeker;
         }
 
         private void Update()
@@ -90,7 +90,6 @@ namespace LOS
 
             // Get list of sources.
             List<LOSSource> losSources = LOSManager.Instance.LOSSources;
-
             for (int i = 0; i < losSources.Count; ++i)
             {
                 LOSSource losSource = losSources[i];
@@ -161,7 +160,7 @@ namespace LOS
 
         #endregion Event Invole Function
 
-        private void LineOfSightEnter(GameObject sender, ILOSSource losSource)
+        private void SwitchToSeeker(GameObject sender, ILOSSource losSource)
         {
             var patrol = losSource.GameObject.transform.parent.gameObject.GetComponent<Patrol>();
             patrol.enabled = false;
