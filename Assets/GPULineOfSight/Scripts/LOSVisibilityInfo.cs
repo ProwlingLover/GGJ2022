@@ -162,14 +162,18 @@ namespace LOS
 
         private void SwitchToSeeker(GameObject sender, ILOSSource losSource)
         {
-            bool isRay = sender.transform.parent.transform.parent.GetComponent<LightTest>().IsRay();
-            if (isRay)
+            var lightTest = sender.transform.parent.transform.parent.GetComponent<LightTest>();
+            if (lightTest != null)
             {
-                var patrol = losSource.GameObject.transform.parent.gameObject.GetComponent<Patrol>();
-                patrol.enabled = false;
-                var aiDesSetter = losSource.GameObject.transform.parent.gameObject.GetComponent<AIDestinationSetter>();
-                aiDesSetter.target = sender.transform;
-                aiDesSetter.enabled = true;
+                bool isRay = lightTest.IsRay();
+                if (isRay)
+                {
+                    var patrol = losSource.GameObject.transform.parent.gameObject.GetComponent<Patrol>();
+                    patrol.enabled = false;
+                    var aiDesSetter = losSource.GameObject.transform.parent.gameObject.GetComponent<AIDestinationSetter>();
+                    aiDesSetter.target = sender.transform;
+                    aiDesSetter.enabled = true;
+                }
             }
         }
     }
