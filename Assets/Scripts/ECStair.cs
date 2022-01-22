@@ -54,6 +54,15 @@ public class ECStair : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision other) 
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            canTrans = true;
+            player = other.transform;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
