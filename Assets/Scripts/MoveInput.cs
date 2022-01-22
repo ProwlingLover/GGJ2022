@@ -25,7 +25,6 @@ public class MoveInput : MonoBehaviour
         moveState = EnumMoveState.Move;
         boby = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        RreshCamera();
     }
 
     void RreshCamera()
@@ -38,6 +37,7 @@ public class MoveInput : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        RreshCamera();
         if (!IsClimbing())
         {
             Move();
@@ -73,7 +73,7 @@ public class MoveInput : MonoBehaviour
     {
         moveState = EnumMoveState.Move;
         anim.SetBool("climbing", false);
-        //boby.useGravity = true;
+        //boby.useGravity = true;s
     }
 
     public void ChangeClimbMode()

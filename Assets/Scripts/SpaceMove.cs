@@ -64,7 +64,7 @@ public class SpaceMove : MonoBehaviour {
         }
         if (lockFollower != null)
         {
-            lockFollower.transform.parent = gameObject.transform;
+            lockFollower.transform.parent = null;
             lockFollower = null;
         }
     }

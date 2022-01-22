@@ -22,3 +22,10 @@ public enum EnumClimbDir
     AU,
     AD,
 }
+
+public enum Axis
+{
+    X,
+    Y,
+    Z,
+}
