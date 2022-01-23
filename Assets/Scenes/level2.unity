@@ -5699,6 +5699,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7683c6e5221a9941a22491ff2531dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &498433948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498433946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c65bfcc148b22b4c8b1c59826bb7d34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &498433953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8302083539835436014, guid: 0375fbb675b0da644bbd1a3ceab902f3,
@@ -6682,6 +6694,49 @@ Transform:
   - {fileID: 629650182}
   m_Father: {fileID: 1265131021}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &611126673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 611126675}
+  - component: {fileID: 611126674}
+  m_Layer: 0
+  m_Name: SLmanager
+  m_TagString: SLManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &611126674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611126673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0727c28e0ea633c41a300348559250cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &611126675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611126673}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.13, y: -2.3, z: -6.7614117}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &612180511
 PrefabInstance:
@@ -12102,6 +12157,11 @@ PrefabInstance:
       propertyPath: m_SpotAngle
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 1086291207842090210, guid: 038c8b6194ae8044d8f24f125e51dbef,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4506542380508382812, guid: 038c8b6194ae8044d8f24f125e51dbef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12160,6 +12220,11 @@ PrefabInstance:
     - target: {fileID: 4506542380508382813, guid: 038c8b6194ae8044d8f24f125e51dbef,
         type: 3}
       propertyPath: m_Name
+      value: memory
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506542380508382813, guid: 038c8b6194ae8044d8f24f125e51dbef,
+        type: 3}
+      propertyPath: m_TagString
       value: memory
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12662,6 +12727,11 @@ PrefabInstance:
     - target: {fileID: 4506542380508382813, guid: 038c8b6194ae8044d8f24f125e51dbef,
         type: 3}
       propertyPath: m_Name
+      value: memory
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506542380508382813, guid: 038c8b6194ae8044d8f24f125e51dbef,
+        type: 3}
+      propertyPath: m_TagString
       value: memory
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -27207,6 +27277,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2075309686}
     m_Modifications:
+    - target: {fileID: 1949007810523784415, guid: fafa9b8dee13472459a6ccaba2952d79,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2063976582088047827, guid: fafa9b8dee13472459a6ccaba2952d79,
         type: 3}
       propertyPath: targetCamTrans
@@ -27221,6 +27296,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: start
+      objectReference: {fileID: 0}
+    - target: {fileID: 5775007112894702925, guid: fafa9b8dee13472459a6ccaba2952d79,
+        type: 3}
+      propertyPath: m_TagString
+      value: savePoint
       objectReference: {fileID: 0}
     - target: {fileID: 8754101662843815839, guid: fafa9b8dee13472459a6ccaba2952d79,
         type: 3}

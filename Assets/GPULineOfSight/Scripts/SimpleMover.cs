@@ -13,6 +13,7 @@ public class SimpleMover : MonoBehaviour {
     public float speed = 1.0f;
     
     private bool inMoving = false;
+    public string key = "d";
     private void Start()
     {
         if (halfWayPositionList != null)
@@ -38,7 +39,7 @@ public class SimpleMover : MonoBehaviour {
 
     private void FixedUpdate() 
     {
-        if (Input.GetKeyDown("p"))
+        if (Input.GetKey(key))
         {
             if (!inMoving && isStayCollide)
             {
