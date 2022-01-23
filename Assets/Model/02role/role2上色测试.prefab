@@ -4712,6 +4712,7 @@ GameObject:
   - component: {fileID: 7656462543944017584}
   - component: {fileID: 288127453557969758}
   - component: {fileID: 389297051315313358}
+  - component: {fileID: 4228340066841239313}
   m_Layer: 0
   m_Name: "role2\u4E0A\u8272\u6D4B\u8BD5"
   m_TagString: Player
@@ -4820,6 +4821,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crossFadeChat: {fileID: 0}
   deadWave: {fileID: 0}
+--- !u!114 &4228340066841239313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8302083539835660174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7683c6e5221a9941a22491ff2531dd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8302083539835660256
 GameObject:
   m_ObjectHideFlags: 0
@@ -4831,6 +4844,7 @@ GameObject:
   - component: {fileID: 8302083539835435968}
   - component: {fileID: 8302083539838860270}
   - component: {fileID: 8302083539837860142}
+  - component: {fileID: 1372449546877457757}
   m_Layer: 0
   m_Name: body 1
   m_TagString: Untagged
@@ -4897,6 +4911,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1372449546877457757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8302083539835660256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9018e999a9efe5f41824f4dc49e4bf85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RaycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &8302083539835660258
 GameObject:
   m_ObjectHideFlags: 0
@@ -5353,6 +5382,7 @@ GameObject:
   - component: {fileID: 8302083539835435992}
   - component: {fileID: 8302083539838860264}
   - component: {fileID: 8302083539837860136}
+  - component: {fileID: 8120714168916011188}
   m_Layer: 0
   m_Name: head 1
   m_TagString: Untagged
@@ -5419,6 +5449,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &8120714168916011188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8302083539835660280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9018e999a9efe5f41824f4dc49e4bf85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RaycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &8302083539835660282
 GameObject:
   m_ObjectHideFlags: 0
@@ -5461,6 +5506,7 @@ GameObject:
   - component: {fileID: 8302083539835435996}
   - component: {fileID: 8302083539838860266}
   - component: {fileID: 8302083539837860138}
+  - component: {fileID: 3489833659556507976}
   m_Layer: 0
   m_Name: foot001
   m_TagString: Untagged
@@ -5527,6 +5573,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3489833659556507976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8302083539835660284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9018e999a9efe5f41824f4dc49e4bf85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RaycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &8302083539835660286
 GameObject:
   m_ObjectHideFlags: 0
@@ -5538,6 +5599,7 @@ GameObject:
   - component: {fileID: 8302083539835435998}
   - component: {fileID: 8302083539838860268}
   - component: {fileID: 8302083539837860140}
+  - component: {fileID: 5578459797281796846}
   m_Layer: 0
   m_Name: foot
   m_TagString: Untagged
@@ -5604,3 +5666,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5578459797281796846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8302083539835660286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9018e999a9efe5f41824f4dc49e4bf85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RaycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
