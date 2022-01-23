@@ -12,6 +12,8 @@ public class HostStateHelper : MonoBehaviour {
 
     public Fungus.Flowchart crossFadeChat;
 
+    private GameObject emptyHost = null;
+
     private float sumTime = 0f;
     private float fadeTime = 0f;
     private void Start()
@@ -19,12 +21,15 @@ public class HostStateHelper : MonoBehaviour {
         body = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         collider = GetComponent<BoxCollider>();
+        emptyHost = new GameObject("emptyHost");
     }
 
     private void OnCollisionEnter(Collision collisionInfo) 
     {
         if (collisionInfo.gameObject.tag == "Enemy")
         {
+            emptyHost.transform.position = gameObject.transform.position;
+            emptyHost.transform.eulerAngles = gameObject.transform.eulerAngles;
             if (anim != null)
             {
                 anim.Play("die");
@@ -33,6 +38,7 @@ public class HostStateHelper : MonoBehaviour {
             var follow = cam.GetComponent<AstarSmoothFollow2>();
             if (follow != null)
             {
+                follow.target = emptyHost.transform;
                 follow.enabled = true;
             }
             if (collider != null)
@@ -45,32 +51,32 @@ public class HostStateHelper : MonoBehaviour {
 
     public IEnumerator startCountDown()
     {
-        while (sumTime <= 3.5)
+        while (sumTime <= 0.2)
         {
             sumTime++;
-            if (sumTime >= 3.5)
+            if (sumTime >= 0.2)
             {
                 if (crossFadeChat != null) crossFadeChat.gameObject.SetActive(true);
                 yield break;
             }
-            else if (sumTime < 3.5f)
+            else if (sumTime < 0.2f)
             {
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.2f);
             }
         }
     }
 
     public IEnumerator BeKilled()
     {
-        while (fadeTime <= 3.5f)
+        while (fadeTime <= 2.5f)
         {
             fadeTime++;
-            if (fadeTime >= 3.5)
+            if (fadeTime >= 2.5)
             {
                 if (crossFadeChat != null) crossFadeChat.gameObject.SetActive(false);
                 yield break;
             }
-            else if (fadeTime < 3.5f)
+            else if (fadeTime < 2.5f)
             {
                 yield return new WaitForSeconds(0.5f);
             }

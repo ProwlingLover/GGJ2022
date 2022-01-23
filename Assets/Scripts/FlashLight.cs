@@ -89,12 +89,15 @@ public class HitInfoList:List<RaycastHit>
     {
         foreach (var elem in this)
         {
-            string iName = info.collider.name;
-            string eName = elem.collider.name;
-            if (iName.Equals(eName))
+            if (info.collider != null && elem.collider != null)
             {
-                result = elem;
-                return true;
+                string iName = info.collider.name;
+                string eName = elem.collider.name;
+                if (iName.Equals(eName))
+                {
+                    result = elem;
+                    return true;
+                }
             }
         }
         result = new RaycastHit();
@@ -244,12 +247,16 @@ public abstract class LightEventListener : MonoBehaviour
         foreach (var listener in ListenerList)
         {
             string lName = listener.name;
-            string iName = info.collider.name;
-            Action<RaycastHit> Method = listener.methods[(int)type];
-
-            if (lName.Equals(iName) && Method != null)
+            if (info.collider != null)
             {
-                Method(info);
+                string iName = info.collider.name;
+                Action<RaycastHit> Method = listener.methods[(int)type];
+
+                if (lName.Equals(iName) && Method != null)
+                {
+                    Method(info);
+                }
+
             }
         }
     }
