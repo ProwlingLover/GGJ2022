@@ -9,6 +9,7 @@ public class SpaceMove : MonoBehaviour {
     private bool isStayCollide = false;
 
     public bool isLockCollide = false;
+    public bool isOnCollideEnterStartMove = false;
 
     public float speed = 1.0f;
     
@@ -31,8 +32,12 @@ public class SpaceMove : MonoBehaviour {
         }
         if (isLockCollide && collisionInfo.gameObject.name == "host")
         {
-            lockFollower = collisionInfo.gameObject;
-            lockFollower.transform.parent = gameObject.transform;
+            if (collisionInfo.gameObject.transform.parent == null)
+            {
+                lockFollower = collisionInfo.gameObject;
+                lockFollower.transform.parent = gameObject.transform;
+                inMoving = true;
+            }
         }
     }
 

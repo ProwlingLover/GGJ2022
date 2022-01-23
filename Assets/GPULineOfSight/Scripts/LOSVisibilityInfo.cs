@@ -162,7 +162,7 @@ namespace LOS
 
         private void SwitchToSeeker(GameObject sender, ILOSSource losSource)
         {
-            var lightTest = sender.transform.parent.transform.parent.GetComponent<LightTest>();
+            var lightTest = sender.transform.parent.transform.parent.transform.parent.GetComponent<LightTest>();
             if (lightTest != null)
             {
                 bool isRay = lightTest.IsRay();
