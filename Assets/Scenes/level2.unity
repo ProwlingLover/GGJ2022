@@ -8956,6 +8956,9 @@ GameObject:
   - component: {fileID: 829116772}
   - component: {fileID: 829116782}
   - component: {fileID: 829116783}
+  - component: {fileID: 829116786}
+  - component: {fileID: 829116785}
+  - component: {fileID: 829116784}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9286,6 +9289,48 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &829116784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829116771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 545568d0d04e8734e8c07535254b2262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  depthTextureMode: 1
+--- !u!114 &829116785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829116771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b681372c887b244aad3a5d080b8468d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &829116786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829116771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a890a261479b134daa24df006cb1db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fogShader: {fileID: 4800000, guid: fa059f496c71eda43a8a97e13170e75d, type: 3}
+  fogDensity: 0.3
+  fogColor: {r: 0.10964756, g: 0.21447818, b: 0.3018868, a: 1}
+  fogStart: -0.3
+  fogEnd: 2.9
 --- !u!1001 &833264341
 PrefabInstance:
   m_ObjectHideFlags: 0
