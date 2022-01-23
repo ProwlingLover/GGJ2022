@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaskColor: {r: 1, g: 1, b: 1, a: 1}
-  m_MaskIntensity: 1
+  m_MaskIntensity: 3
   m_MaskInvert: 0
   m_RenderTargetWidth: 512
   m_RenderTargetHeight: 512
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaskColor: {r: 1, g: 1, b: 1, a: 1}
-  m_MaskIntensity: 1
+  m_MaskIntensity: 3
   m_MaskInvert: 0
   m_RenderTargetWidth: 512
   m_RenderTargetHeight: 512
