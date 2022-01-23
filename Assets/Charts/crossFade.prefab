@@ -62,7 +62,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 7382825187532785826}
   selectedCommands:
-  - {fileID: 7382825187532785825}
+  - {fileID: 7382825187532785836}
   variables: []
   description: 
   stepPause: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 67
+    x: 65.93617
     y: 70
     width: 111.702126
     height: 40
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  duration: 3
+  duration: 3.5
   targetAlpha: 1
   waitUntilFinished: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
