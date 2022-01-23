@@ -20,4 +20,15 @@ public class ShowChatWhenCollide : MonoBehaviour {
             }
         }
     }
+
+    private void OnTriggerEnter(Collider collisionInfo) 
+    {
+        if (collisionInfo.tag == "Player")
+        {
+            if (targetChat != null)
+            {
+                targetChat.gameObject.SetActive(true);
+            }
+        }
+    }
 }
