@@ -4654,7 +4654,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aadd7dabda4c33941bf4f1ca90d5838e, type: 2}
+  - {fileID: 2100000, guid: 1c40d8e02c9172c47a5d325e0514c0d5, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4819,6 +4819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crossFadeChat: {fileID: 0}
+  deadWave: {fileID: 0}
 --- !u!1 &8302083539835660256
 GameObject:
   m_ObjectHideFlags: 0
