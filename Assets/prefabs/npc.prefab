@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 3236686052658698961}
   - component: {fileID: 4435733291887828381}
   - component: {fileID: 522024744326442569}
+  - component: {fileID: 723441769688467879}
   m_Layer: 0
   m_Name: npc
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,6 +195,19 @@ MonoBehaviour:
   version: 1
   targets: []
   delay: 0
+--- !u!65 &723441769688467879
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714942788290753104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.85, y: 7.65, z: 2.53}
+  m_Center: {x: 0.37, y: 2.85, z: 0}
 --- !u!1 &2022406060666600130
 GameObject:
   m_ObjectHideFlags: 0
