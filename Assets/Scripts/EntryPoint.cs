@@ -14,4 +14,9 @@ public class EntryPoint : MonoBehaviour {
     {
         SceneManager.LoadScene("startChatScene");
     }
+
+    public void ShowDevTeam()
+    {
+        // var img = GameObject.Find("")
+    }
 }
