@@ -12,6 +12,6 @@ public class EntryPoint : MonoBehaviour {
 
     public void OnClickStartGame()
     {
-        SceneManager.LoadScene("level1_debug");
+        SceneManager.LoadScene("startChatScene");
     }
 }

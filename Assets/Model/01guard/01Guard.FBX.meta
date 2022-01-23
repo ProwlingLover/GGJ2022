@@ -32,7 +32,17 @@ ModelImporter:
     7400004: trace
     9500000: //RootNode
     13700000: GurBody
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Guard_Eye
+    second: {fileID: 2100000, guid: 69426ec7fbb08344cab5ae3ed2136dc7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Guard_body
+    second: {fileID: 2100000, guid: d972791a983486549bddf6f7e55f0479, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
