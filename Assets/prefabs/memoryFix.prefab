@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1229084134265390033}
   - component: {fileID: 1229084134265390034}
   m_Layer: 0
-  m_Name: memory 1
+  m_Name: memoryFix
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9685,7 +9685,7 @@ Animator:
   m_GameObject: {fileID: 1229084135733742930}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 4998afa707ef30a428c1c7869e397f21, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1b1cbfbb99ed4d54992bcb497c72fc6f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -9738,9 +9738,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.6839622, g: 0.9146766, b: 1, a: 1}
-  m_Intensity: 65.7
-  m_Range: 10
-  m_SpotAngle: 30
+  m_Intensity: 15
+  m_Range: 15
+  m_SpotAngle: 60
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -9760,7 +9760,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.9
+  m_BounceIntensity: 4
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -9777,8 +9777,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6005c2d4357c3b34aaf002cfcf5a00ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dampSpeed: 10
-  rangeOffset: 1
+  dampSpeed: 0
+  rangeOffset: 15
   useMultipleRay: 1
   sectionOfMultipleRay: 0.05
 --- !u!1 &1229084135958359806

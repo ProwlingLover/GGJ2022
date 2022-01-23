@@ -14,6 +14,11 @@ public class SwitchOnSpotLight : MonoBehaviour {
                 isLightOn = true;
                 var light = gameObject.GetComponentInChildren<Light>();
                 if (light != null) light.enabled = true;
+                var anim = gameObject.GetComponentInChildren<Animator>();
+                if (anim != null)
+                {
+                    anim.Play("activating");
+                }
             }
         }
     }
@@ -26,6 +31,11 @@ public class SwitchOnSpotLight : MonoBehaviour {
                 isLightOn = true;
                 var light = gameObject.GetComponentInChildren<Light>();
                 if (light != null) light.enabled = true;
+                var anim = gameObject.GetComponentInChildren<Animator>();
+                if (anim != null)
+                {
+                    anim.Play("activating");
+                }
             }
         }
     }

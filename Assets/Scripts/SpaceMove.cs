@@ -50,10 +50,10 @@ public class SpaceMove : MonoBehaviour {
                 inMoving = true;
             }
         }
-        if (inMoving)
+        if (inMoving || (isOnCollideEnterStartMove && isStayCollide))
         {
             Move();
-        }   
+        }
     }
 
     private void OnCollisionExit(Collision collisionInfo) 

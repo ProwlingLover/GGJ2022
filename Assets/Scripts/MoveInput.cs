@@ -42,6 +42,7 @@ public class MoveInput : MonoBehaviour
         {
             Move();
         }
+        CheckHostScale();
     }
 
     void Move()
@@ -74,6 +75,17 @@ public class MoveInput : MonoBehaviour
         moveState = EnumMoveState.Move;
         anim.SetBool("climbing", false);
         //boby.useGravity = true;s
+    }
+
+    private void CheckHostScale()
+    {
+        if (gameObject.transform.parent == null)
+        {
+            if (gameObject.transform.localScale != Vector3.one)
+            {
+                gameObject.transform.localScale = Vector3.one;
+            }
+        }
     }
 
     public void ChangeClimbMode()
