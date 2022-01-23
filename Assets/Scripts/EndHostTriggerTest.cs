@@ -3,17 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class ShowChatWhenCollide : MonoBehaviour {
+using Pathfinding.Examples;
+public class EndHostTriggerTest : MonoBehaviour {
+
     public Fungus.Flowchart targetChat;
+    private Animator animator;
     private void Start()
     {
-        
+        animator = gameObject.GetComponent<Animator>();
     }
 
     private void OnCollisionEnter(Collision collisionInfo) 
     {
         if (collisionInfo.gameObject.name == "host")
         {
+            if (animator != null)
+            {
+                animator.Play("active");
+            }
             if (targetChat != null)
             {
                 targetChat.gameObject.SetActive(true);
@@ -21,14 +28,8 @@ public class ShowChatWhenCollide : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter(Collider collisionInfo) 
+    private void ShowFinalStage()
     {
-        if (collisionInfo.tag == "Player")
-        {
-            if (targetChat != null)
-            {
-                targetChat.gameObject.SetActive(true);
-            }
-        }
+
     }
 }
