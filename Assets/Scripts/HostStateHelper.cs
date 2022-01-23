@@ -11,6 +11,7 @@ public class HostStateHelper : MonoBehaviour {
     private BoxCollider collider;
 
     public Fungus.Flowchart crossFadeChat;
+    public GameObject deadWave = null;
 
     private GameObject emptyHost = null;
 
@@ -28,6 +29,8 @@ public class HostStateHelper : MonoBehaviour {
     {
         if (collisionInfo.gameObject.tag == "Enemy")
         {
+            deadWave.transform.position = gameObject.transform.position;
+            deadWave.SetActive(true);
             emptyHost.transform.position = gameObject.transform.position;
             emptyHost.transform.eulerAngles = gameObject.transform.eulerAngles;
             if (anim != null)
