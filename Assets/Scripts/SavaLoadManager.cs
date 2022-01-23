@@ -11,12 +11,21 @@ public class GameData
 public class SavaLoadManager : MonoBehaviour
 {
 
-    private GameData data;
+    private static GameData data;
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
-        data = new GameData();
-        data.lightState = new Dictionary<string, bool>();
+        if (data == null)
+        {
+            Debug.Log("1");
+            data = new GameData();
+            data.lightState = new Dictionary<string, bool>();
+        }
+        else
+        {
+            Debug.Log("2");
+            Load();
+        }
     }
 
     public void Save()
@@ -30,7 +39,14 @@ public class SavaLoadManager : MonoBehaviour
             var v = lights[i].GetComponentInChildren<Light>();
             if (v != null)
             {
-                data.lightState.Add(v.transform.position.ToString(), v.enabled);
+                var hash = v.transform.position.ToString();
+                if (!data.lightState.ContainsKey(hash)) {
+                    data.lightState.Add(hash, v.enabled);
+                }
+                else
+                {
+                    data.lightState[hash] = v.enabled;
+                }
                 //Debug.Log(v.transform.position.ToString()+v.enabled);
             }
         }
@@ -42,8 +58,28 @@ public class SavaLoadManager : MonoBehaviour
         data.lightState.Clear();
     }
 
-    public GameData Load()
+    public void Load()
     {
-        return data;
+        var player = GameObject.FindGameObjectWithTag("Player");
+        player.transform.position = data.playerPos;
+        //Debug.Log(data.playerPos);
+        var lights = GameObject.FindGameObjectsWithTag("memory");
+        for (int i = 0, j = lights.Length; i < j; i++)
+        {
+            var v = lights[i].GetComponentInChildren<Light>();
+            if (v != null)
+            {
+                var hash = v.transform.position.ToString();
+                if (!data.lightState.ContainsKey(hash))
+                {
+                    v.enabled = false;
+                }
+                else
+                {
+                    v.enabled = data.lightState[hash];
+                }
+            }
+        }
+        Debug.Log("Load");
     }
 }
