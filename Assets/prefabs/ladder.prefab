@@ -58,7 +58,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 3482430368028595079}
-  climbSpeed: 0.005
+  climbSpeed: 0.01
+  key: s
 --- !u!1 &2894552292671869660
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   climbSpeed: 0.005
+  key: 
 --- !u!1 &7284654106412756419
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,4 +227,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 6070020832838024279}
-  climbSpeed: 0.005
+  climbSpeed: 0.01
+  key: w

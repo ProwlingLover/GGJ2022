@@ -14,6 +14,7 @@ public class ECStair : MonoBehaviour
     private bool climbing = false;
     private Vector3 lastPos;
     private float t = 0;
+    public string key;
     void Start()
     {
         
@@ -37,7 +38,7 @@ public class ECStair : MonoBehaviour
                 }
             }
         }
-        else if (canTrans &&Input.GetKey("g"))
+        else if (canTrans &&Input.GetKey(key))
         {
             player = tempPlayer;
             var input = player.GetComponent<MoveInput>();
